@@ -1,0 +1,55 @@
+public class unit5 {
+
+	static String q="";
+	static ArrayList<String> n=new ArrayList();
+	  
+	public static void main(String[] args) {
+		String a="banana";
+		int b=a.length();
+		int counts=b/2;
+		int p=0;
+		
+		int x=0;
+		int u=0;
+		for(int v=0;v<=a.length()-1;v++) {
+			u=v;
+			if(p<counts) {
+				for(int i=0,j=1;i<=a.length()-1;i++,j++) {
+					ArrayList<String> s=new ArrayList();
+					
+					while(u<=a.length()-1) {
+						String t="";
+						int c=0;
+						while(c<j&&u<=a.length()-1) {
+							t+=a.charAt(u);
+							c++;
+							u++;
+						}
+						s.add(t);
+						String f=a.substring(u,a.length());
+						boolean e=f.contains(s.get(s.size()-1));
+						if(e==true) {
+							n.add(s.get(s.size()-1));//e
+							String y=n.get(n.size()-1);
+
+							if(x<y.length()) {
+							x=Math.max(x,y.length());
+							q=y;
+							}		
+						}
+						u=u;
+					}
+					u=v;
+				}
+				p++;
+			}
+		}
+		System.out.println(q);
+		System.out.println(x);
+	}
+}
+
+
+OUTPUT:
+na
+2
